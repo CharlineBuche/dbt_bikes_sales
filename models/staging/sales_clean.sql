@@ -10,7 +10,7 @@ SELECT
     Sub_Category,
     CAST(Quantity AS INT) as Quantity,
     Unit_Cost,
-    Unit_Price,
+    ROUND(Unit_Price, 2) as Unit_Price,
     Cost,
     Revenue
 from {{ source('src_sales', 'sales') }}
