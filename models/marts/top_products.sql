@@ -1,17 +1,17 @@
 WITH sub_category_top_products AS(
 
 SELECT
-    Product,
+    Sub_Category,
     Product_Category,
     SUM(Revenue) as sum_revenue,
     /*ROW_NUMBER() OVER(ORDER BY SUM(Revenue) DESC) as rank_revenue,*/
     SUM(Quantity) as sum_qty,
-FROM `keen-alignment-402208.dbt_bikes_sales.sales_clean`
+FROM {{ ref('sales_margin')}}
 GROUP BY 1, 2
 /*QUALIFY rank_revenue <= 5*/)
 
 SELECT
-    Product,
+    Sub_Category,
     Product_Category,
     sum_qty,
     sum_revenue,
