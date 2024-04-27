@@ -9,11 +9,11 @@ SELECT
     Country,
     State as State_sale,
     Product_Category,
-    Sub_Category as Product,
+    Sub_Category,
     CAST(Quantity AS INT) as Quantity,
     Unit_Cost,
     ROUND(Unit_Price, 2) as Unit_Price,
     Cost,
     Revenue
 from {{ source('src_sales', 'sales') }}
-WHERE Date >= '2015-07-01' AND Date <= '2016-06-30'
+WHERE Date IS NOT NULL

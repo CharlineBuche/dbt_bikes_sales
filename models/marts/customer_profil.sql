@@ -7,5 +7,5 @@ SELECT
     APPROX_QUANTILES(Customer_Age, 2)[OFFSET(1)] as Median_age,
     MIN(Customer_Age) as Min_age,
     MAX(Customer_Age) as Max_age
-FROM `keen-alignment-402208.dbt_bikes_sales.sales_clean`
+FROM {{ ref('sales_margin')}}
 GROUP BY 1, 2
