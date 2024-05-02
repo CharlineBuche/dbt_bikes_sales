@@ -1,21 +1,20 @@
 SELECT
-    Date_sale,
-    Year_sale,
-    Month_sale,
-    year_month_date,
-    Customer_Age,
-    Customer_Gender,
-    Country,
-    State_sale,
-    Product_Category,
-    Sub_Category,
-    Quantity,
-    Unit_Cost,
-    Unit_Price,
-    Cost,
-    Revenue,
-    Revenue - Cost AS Margin,
-    Unit_Price - Unit_Cost AS Unit_Margin,
+    date_sale,
+    year_sale,
+    month_sale,
+    date,
+    customer_Age,
+    customer_Gender,
+    country,
+    product_Category,
+    subCategory,
+    quantity,
+    unit_cost,
+    unit_price,
+    cost,
+    revenue,
+    revenue - cost AS margin,
+    unit_price - unit_cost AS unit_margin,
     CASE
         WHEN Customer_Age <= 24 THEN '17-25'
         WHEN Customer_Age >=25 and Customer_Age <=34 THEN '25-34'
@@ -25,5 +24,5 @@ SELECT
         WHEN Customer_Age >=65 and Customer_Age <=74 THEN '65-74'
         WHEN Customer_Age >=75 THEN '74_87'
         ELSE '0'
-    END AS Range_Age
+    END AS age_group
 FROM {{ ref('sales_clean')}}
