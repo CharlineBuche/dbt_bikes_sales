@@ -64,4 +64,4 @@ I importe the finalized table on Power BI in order to make visualizations and dr
 
 ### **Analysis**
 
-The analysis is available on my Notion <a href="https://www.notion.so/Analysis-of-bikes-sales-bf31abb7bf1e4bcfb638f3aa23747f29?pvs=4">here</a>
+The analysis is available on my Notion <a href="https://forested-random-fe5.notion.site/Analysis-of-bikes-sales-bf31abb7bf1e4bcfb638f3aa23747f29">here</a>
